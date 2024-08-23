@@ -1,0 +1,151 @@
+:root{
+    --color-Principal: #000000;
+    --color-secundario: #ffffff;
+    --color-switch-off1: #e045ff;
+    --color-switch-off2: #f3b7ff;
+    --color-switch-off3: #8d00c1;
+    --color-switch-on1: #696969;
+    --gris-oscuro-principal: #3b3b3b;
+    --gris-oscuro-secundario: #5f5f5f;
+    --gris-claro-primario: #cbcbcb;
+    --gris-claro-secundario: #e2e2e2;
+    --gris-claro-terciario: #bdbdbd;
+    --sol: #ff8000;
+    --luna: #caffff;
+
+
+
+}
+
+
+
+body.active ::selection {
+    background: var(--color-secundario);
+    color: var(--color-Principal);
+}
+
+.switch{
+    width: 60px;
+    height: 30px;
+    padding: 0  5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 100px;
+    border: var(--color-switch-off1) solid 2px;
+    background-color: var(--color-switch-off2);
+}
+.sol{
+    color: var(--sol);
+}
+.luna{
+    width: 35%;
+    color: var(--luna);
+}
+.zona_switch li::before{
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: solid var(--color-switch-off1) 2px;
+    background-color: var(--color-switch-off3);
+    left: 0%;
+    right: unset;
+}
+
+.zona_switch li.active::before{
+    right: 0%;
+    left: unset;
+    border: solid 2px var(--color-switch-on1);
+    background-color: var(--gris-oscuro-principal);
+
+}
+
+.zona_switch li.active{
+    background-color: var(--gris-claro-primario);
+    border: solid 2px var(--color-switch-on1);
+}
+
+body.active {
+    background: var(--color-Principal);
+}
+body.active .pie {
+    background-color: var(--gris-oscuro-principal);
+    color: var(--gris-claro-secundario);
+}
+
+body.active .logo{
+    
+    filter: grayscale(100);
+}
+
+body.active .zona_resultado {
+    background: var(--gris-oscuro-secundario);
+}
+
+body.active .muñeco{
+    filter: grayscale(90);
+}
+
+body.active .contenido_general .zona_encriptacion .texto_usuario{
+    color: var(--gris-claro-primario);
+}
+body.active .contenido_general .zona_encriptacion .texto_usuario::placeholder{
+    color: var(--gris-claro-secundario);
+}
+
+body.active .encriptar_button{
+    background: var(--gris-oscuro-secundario);
+    border: var(--gris-claro-primario);
+    color: var(--gris-claro-secundario);
+} 
+
+body.active .encriptar_button:active{
+    box-shadow: inset  3px  3px 4px var(--gris-oscuro-principal);
+    color: var(--gris-oscuro-principal);
+}
+
+body.active .contenido_general .desencriptar_button{
+    background: var(--gris-claro-secundario);
+    border: var(--gris-claro-primario);
+    color: var(--gris-oscuro-secundario);
+}
+
+body.active .trash_button{
+    background: var(--gris-claro-secundario);
+    border: var(--gris-claro-primario);
+    color: var(--gris-oscuro-secundario);
+}
+
+body.active .desencriptar_button:active, .trash_button:active {
+    box-shadow: inset  3px  3px 4px var(--gris-oscuro-principal);
+    color: var(--gris-claro-terciario);
+}
+
+
+body.active .copiar_button{
+    background: var(--gris-claro-secundario);
+    border: var(--gris-claro-primario);
+    color: var(--gris-oscuro-secundario);
+}
+
+body.active .copiar_button:active {
+    box-shadow: inset  3px  3px 4px var(--gris-oscuro-principal);
+    color: var(--gris-claro-terciario);
+}
+
+
+body.active .no_texto_encontrado{
+    color: var(--color-secundario);
+    
+}
+
+body.active .solicitud_ingresar_texto{
+    color: var(--gris-claro-primario);
+}
+
+body.active .resultado{
+    color: var(--color-secundario);
+}

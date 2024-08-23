@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cabin+Sketch:wght@400;700&family=Fuzzy+Bubbles:wght@400;700&family=Gotu&family=Kite+One&family=McLaren&family=Preahvihear&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --color-uno-texto: #61caff;
+    --color-dos-texto: #85e8fa;
+    --color-info: #ffffff;
+    --color-ligth-bts: #f3b7ff;
+    --color-dark-bts: #d400ff;
+    --color-seleccion: #8d00c1;
+    --color-footer: #5f00cc;
+    --color-zona-resultado: #9b43ff9e;
+    --color-sombra-bts1: #ff57ff;
+    --color-sombra-bts2: #74018b;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--color-seleccion);
+}
+
+
+body {
+    height: 83vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("images/letras\ purpuras.jpg");
+    object-fit: cover;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+header {
+    width: 60%;
+    margin: 40px 0px 0px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.logo{
+    width: 40px;
+    margin-left: 5%;
+    
+}
+
+.contenido_general{
+    padding: 4% 7% 0% 7%;
+    display: flex;  
+    justify-content: space-around; 
+    align-items: flex-start;
+    height: 100%; /* Altura completa de la ventana */
+    margin-bottom: 2%;
+    
+}
+
+.zona_encriptacion {
+    padding-left: 6%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%; /* Espacio entre las dos zonas */
+    height: 100%;
+    width: 70%;
+    position: relative;
+}
+
+
+.texto_usuario{
+    width: 100%;
+    height: 700%;
+    border: none;
+    background: none;
+    border-style: none;
+    color: var(--color-uno-texto);
+    font-style: normal;
+    font-family: "Shantell Sans", cursive;
+    font-optical-sizing: auto;
+    resize: none; /* Para que el usuario no pueda cambiar el tamaño del textarea */
+    font-size: 220%;
+    font-weight: 500
+
+}
+
+::placeholder { color: var(--color-uno-texto);}
+    .texto_usuario:focus{
+        outline: none; 
+    }
+
+textarea:focus::placeholder {
+    opacity: 0; /* Cuando el usuario hace clic en el textarea, el placeholder desaparece */
+    outline: none; /* cuando se pasa el cursor no se resalta la zona*/
+}
+
+
+.info {
+    display: flex;
+    gap: 1%;
+    color: var(--color-info);
+    margin: 1.5%;
+}
+
+
+.zona_encriptacion_botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+    padding: 5%;
+    padding-top: 1%;
+    
+}
+
+.encriptar_button {
+    width: 45%;
+    height: 87%;
+    padding: 24px;
+    border: 2px solid var(--color-dark-bts);
+    border-radius: 20px;
+    background-image: linear-gradient(#e879fe 0%, #d400ff 70%, #e879fe 100%);;
+    cursor: pointer;
+    color: var(--color-ligth-bts);
+    font-family: "Cabin Sketch", sans-serif;
+    font-size: 150%;
+    text-align: center;
+    line-height: 19px;
+    
+
+}
+
+.encriptar_button:active{
+    box-shadow: inset  2px  2px 4px var(--color-sombra-bts2);
+    color: var(--color-sombra-bts2);
+
+}
+
+.desencriptar_button {
+    width: 45%;
+    height: 87%;
+    padding: 24px;
+    border-radius: 20px;
+    background-image: linear-gradient(#e879fe 0%, #f3b7ff 70%, #e879fe 100%);;
+    border: 2px solid var(--color-ligth-bts);
+    color: var(--color-dark-bts);
+    cursor: pointer;
+    font-family: "Cabin Sketch", sans-serif;
+    font-size: 150%;
+    text-align: center;
+    line-height: 19px;
+}
+
+.copiar_button:active,
+.desencriptar_button:active{
+    box-shadow: inset  2px  2px 4px var(--color-sombra-bts1);
+    color: var(--color-sombra-bts1);
+
+}
+
+.trash_button {
+    width: 5%;
+    height: 8%;
+    padding: 0.5%;
+    color: var(--color-dark-bts);
+    border-radius: 20px;
+    background-image: linear-gradient(#e879fe 0%, #f3b7ff 70%, #e879fe 100%);;
+    border: 2px solid var(--color-ligth-bts);
+    cursor: pointer;
+    visibility: hidden;
+    size: 1%;
+    position: absolute;
+    bottom: 18%;
+    left: 96%;
+}
+
+.zona_resultado {
+
+    width: 30%;
+    height: 85vh;
+    box-sizing: border-box;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem;
+    background-color: var(--color-zona-resultado); /* Añadir un fondo para diferenciarlo */
+    margin-top: -9%;
+    margin-right: 1em;
+    border-radius: 1em;
+    text-align: center; 
+    position: relative; /*esto principalmente es para contener dentro a resultado ya que tiene position absolute*/
+}
+
+.muñeco{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.zona_resultado_texto {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding: 1%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+
+.zona_resultado_mensaje:focus{
+    outline: none;
+}
+
+.no_texto_encontrado{
+    padding-top: 15%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 180%;
+    font-family: "Cabin Sketch", sans-serif;
+    line-height: 120%;
+    margin-bottom: 4%;
+    text-align: center;
+    color: var(--color-uno-texto)
+    
+        
+}
+
+.solicitud_ingresar_texto{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 118%;
+    font-family: "Gotu", sans-serif;
+    line-height: 120%;
+    text-align: center;
+    color: var(--color-dos-texto);
+}
+
+.resultado{
+    width: 85%;
+    height: 85%;
+    position: absolute;
+    margin-top: 10%;
+    top: 2%;
+    left: 7%;
+    font-weight: 400;
+    font-size: 190%;
+    line-height: 36px;
+    background: none;
+    border: none;
+    resize: none;
+    color: var(--color-dos-texto);
+    font-family: "Fuzzy Bubbles", sans-serif;
+}
+
+.resultado:focus{
+    outline: none;
+}
+
+.copiar_button{
+    width: 70%;
+    height: 7.5%;
+    position: absolute;
+    bottom: 5%;
+    left: 16%;
+    right: 25%;
+    visibility: hidden;
+    padding: 24px;
+    font-size: 150%;
+    line-height: 19px;
+    text-align: center;
+    background-image: linear-gradient(#e879fe 0%, #f3b7ff 70%, #e879fe 100%);;
+    border-radius: 20px;
+    border: 2px solid var(--color-ligth-bts);
+    cursor: pointer;
+    color: var(--color-dark-bts);
+    font-family: "Cabin Sketch", sans-serif;
+
+}
+
+.trash_button:hover,
+.desencriptar_button:hover,
+.encriptar_button:hover,
+.copiar_button:hover{
+    transform: scale(0.97);
+}
+
+
+
+footer{
+    background-color: var(--color-footer);
+    height: 20%;
+    color: var(--color-dos-texto);
+    text-align: center;
+    padding: 2% 2%;
+    font-family: "Cabin Sketch", sans-serif;
+    font-size: 140%;
+}
+
+@media (max-width:850px){
+    header {
+        width: 90%;
+        margin: 4% 0% 8% 4%;
+    
+    }
+    body{
+        height: 100vh;
+        background-size: auto;
+    }
+    .contenido_general{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        padding: 1%;
+    }
+    .texto_usuario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 80%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .zona_encriptacion{
+        width: 100%;
+        height: 80%;
+
+    }
+    .zona_encriptacion_botones{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: inherit;
+        padding: 0%;
+        margin-bottom: 3%;
+    }
+    .info{
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+        padding-left: 8%;
+    }
+    .icono_exclamation{
+        margin-bottom: 2%;
+    }
+    .zona_resultado{
+        
+        width: 90%;
+        height: auto; /* Altura automática según el contenido */
+        min-height: 20%; /* Altura mínima para mantener el diseño */
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 0%;
+        margin-bottom: 2%;
+        margin-top: 3%;
+        padding-bottom: 1rem; /* Añadir un poco de espacio en la parte inferior */
+    }
+    .zona_resultado_texto{
+        display: block;
+        padding-top: 6%;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 70%;
+        bottom: 20%;
+        font-size: 120%;
+        font-weight: 700;
+        margin-top: 0%;
+        padding: 0%;
+        overflow-y: auto; /* Permitir el desplazamiento vertical si es necesario */
+        height: auto; /* Altura automática según el contenido */
+        max-height: none; /* Sin límite de altura */
+    }
+    .resultado{
+        margin: 1%;
+        margin: 1%;
+        height: 50%;
+        
+    }
+    .no_texto_encontrado{
+        margin-left: 6%;
+        padding: 1%;
+        width: 85%;
+        margin-bottom: 1%;
+    }
+    .solicitud_ingresar_texto{
+        margin-top: 0%;
+    }
+    .muñeco{
+        display: none;
+    }
+    .copiar_button{
+        width: 90%;
+        left: 5%;
+    }
+    footer{
+        margin-top: 5%;
+        height: 5%;
+        justify-content: center;    
+    }
+  
+}
+
+@media (max-width:600px){
+    header {
+        width: 95%;
+        margin: 6% 0% 8% 0%;
+    }  
+    .logo{
+        width: 35px;
+        
+    }
+    body{
+        height: 110vh;
+    }
+    .contenido_general{
+        height: 85%;
+        flex-direction: column;
+    
+    }
+    .zona_encriptacion{
+        height: 75%;
+    
+    }
+    .texto_usuario{
+        width: 90%;
+        height: 52%;
+        margin-top: 10%;
+        font-size: 230%; 
+        margin-left: 3%; 
+        margin-right: 3%;  
+    }
+    .info{
+        margin: 2%;
+    }
+    .icono_exclamation{
+        margin-bottom: 4%;
+    }
+
+    .trash_button{
+        bottom: 37%;
+        width: 8%;
+        height: 6%;
+        left: 90%;
+    }
+
+    .zona_encriptacion_botones{
+        flex-direction: column;
+        gap: 15%;
+        height: 28%;
+        margin-bottom: 13%;
+    }
+    .encriptar_button{
+        width: 100%;
+        height: 40%;
+    }
+    .desencriptar_button{
+        width: 100%;
+        height: 40%;
+    }
+    .zona_resultado{
+        width: 90%;
+        height: 50%;
+        border-radius: 30PX;
+        padding: 0%;
+        margin: 0%;
+        margin-bottom: 3%;
+        font-size: 90%;
+    }
+    .zona_resultado_texto{
+        padding: 0%;
+        height: 100%;
+        margin-top: 0%;
+        position: absolute;
+        bottom: 0%;
+    }
+    .no_texto_encontrado{
+        margin-left: 6%;
+        margin-top: 4%;
+    }
+    .solicitud_ingresar_texto{
+        width: 80%;
+        margin-left: 8%;
+        
+    }
+    .resultado{
+        margin: 1%;
+        margin: 1%;
+        height: 60%;
+    }
+    footer {
+        font-size: 20px;
+        height: 4%;
+        padding:0%
+    }
+    .desarrollador{
+        margin-top: 3%;
+    }
+    
+}
