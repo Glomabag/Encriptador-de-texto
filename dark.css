@@ -11,7 +11,7 @@
     --gris-claro-secundario: #e2e2e2;
     --gris-claro-terciario: #bdbdbd;
     --sol: #ff8000;
-    --luna: #caffff;
+    --luna: #00b3ff;
 
 
 
@@ -89,10 +89,10 @@ body.active .muñeco{
     filter: grayscale(90);
 }
 
-body.active .contenido_general .zona_encriptacion .texto_usuario{
+body.active .texto_usuario{
     color: var(--gris-claro-primario);
 }
-body.active .contenido_general .zona_encriptacion .texto_usuario::placeholder{
+body.active .texto_usuario::placeholder{
     color: var(--gris-claro-secundario);
 }
 
@@ -107,11 +107,17 @@ body.active .encriptar_button:active{
     color: var(--gris-oscuro-principal);
 }
 
-body.active .contenido_general .desencriptar_button{
+body.active .desencriptar_button{
     background: var(--gris-claro-secundario);
     border: var(--gris-claro-primario);
     color: var(--gris-oscuro-secundario);
 }
+
+body.active .desencriptar_button:active {
+    box-shadow: inset  3px  3px 4px var(--gris-oscuro-principal);
+    color: var(--gris-claro-terciario);
+}
+
 
 body.active .trash_button{
     background: var(--gris-claro-secundario);
@@ -119,11 +125,10 @@ body.active .trash_button{
     color: var(--gris-oscuro-secundario);
 }
 
-body.active .desencriptar_button:active, .trash_button:active {
+body.active .trash_button:active {
     box-shadow: inset  3px  3px 4px var(--gris-oscuro-principal);
     color: var(--gris-claro-terciario);
 }
-
 
 body.active .copiar_button{
     background: var(--gris-claro-secundario);
